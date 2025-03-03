@@ -30,4 +30,20 @@ public class Quarter
 
     public override bool Equals(object obj) => obj is Quarter q && this == q;
     public override int GetHashCode() => GetQuarter().GetHashCode();
+
+
 }
+
+public class Program{
+    public static void Main()
+    {
+        List<Quarter> quarters = new List<Quarter>();
+
+        while (true)
+            {
+
+            }
+    }
+
+}   
+
