@@ -91,6 +91,12 @@ public class Program{
     }
 }
 public class QuarterException : Exception{
-       throw new NotImplementedException();
+    public int InvalidNumber { get; }
+
+    public QuarterException(string message, int invalidNumber) : base(message)
+    {
+        InvalidNumber = invalidNumber;
+    }
 }
+
 
