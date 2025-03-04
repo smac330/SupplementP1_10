@@ -88,9 +88,9 @@ public class Program{
                 Console.WriteLine($"{group.Key}: {group.Count()}");
             }
         }
-
-
-
-        }
     }
+}
+public class QuarterException : Exception{
+       throw new NotImplementedException();
+}
 
