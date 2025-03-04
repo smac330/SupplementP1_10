@@ -68,7 +68,13 @@ public class Program{
 
         static void DisplayQuarters(List<Quarter> quarters)
         {
-           throw new NotImplementedException();
+            var groupedQuarters = quarters.GroupBy(q => q.Value);
+            
+            Console.WriteLine("Existing Quarters:");
+            foreach (var group in groupedQuarters)
+            {
+                Console.WriteLine($"{group.Key}: {group.Count()}");
+            }
         }
 
         }
