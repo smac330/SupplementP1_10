@@ -65,6 +65,12 @@ public class Program{
                     break;
                 }
             }
+
+        static void DisplayQuarters(List<Quarter> quarters)
+        {
+           throw new NotImplementedException();
+        }
+
         }
     }
 
