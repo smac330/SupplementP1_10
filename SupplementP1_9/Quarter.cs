@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 /// <summary>
 /// represents a Quarter, a floating-point number categorized into four equal ranges.
 /// </summary>
@@ -30,8 +34,6 @@ public class Quarter
 
     public override bool Equals(object obj) => obj is Quarter q && this == q;
     public override int GetHashCode() => GetQuarter().GetHashCode();
-
-
 }
 
 public class Program{
@@ -41,9 +43,28 @@ public class Program{
 
         while (true)
             {
-
+                Console.WriteLine("Select an option:\n1. Add a Quarter\n2. Quit");
+                string input = Console.ReadLine();
+                
+                if (input == "2") break;
+                if (input != "1")
+                {
+                    Console.WriteLine("Invalid option. Please try again.");
+                    continue;
+                }
+                
+                try
+                {
+                    Quarter newQuarter = new Quarter();
+                    quarters.Add(newQuarter);
+                    DisplayQuarters(quarters);
+                }
+                catch (QuarterException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message} (Invalid Number: {ex.InvalidNumber})");
+                    break;
+                }
             }
+        }
     }
-
-}   
 
