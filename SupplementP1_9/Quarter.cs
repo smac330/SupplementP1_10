@@ -38,6 +38,12 @@ public class Quarter
 
     public Quarter()
     {
+
+        /// <summary>
+        /// Initializes a new instance of the Quarter class. 
+        /// Throws an exception if more than four quarters are created.
+        /// </summary>
+        
         counter++;
 
         if (counter > 4)
@@ -51,6 +57,9 @@ public class Quarter
 public class Program{
     public static void Main()
     {
+        /// <summary>
+        /// Entry point of the application. Handles user choices and manages the quarters list.
+        /// </summary>
         List<Quarter> quarters = new List<Quarter>();
 
         while (true)
@@ -78,6 +87,11 @@ public class Program{
                 }
             }
 
+        /// <summary>
+        /// Displays the current quarters, grouping them by value to ensure a maximum of four lines.
+        /// </summary>
+        /// <param name="quarters">List of quarters to be displayed.</param>
+        
         static void DisplayQuarters(List<Quarter> quarters)
         {
             var groupedQuarters = quarters.GroupBy(q => q.Value);
@@ -90,9 +104,22 @@ public class Program{
         }
     }
 }
+
+/// <summary>
+/// Custom exception for Quarter limit violations.
+/// </summary>
+
 public class QuarterException : Exception{
+    /// <summary>
+    /// Gets the invalid number that caused the exception.
+    /// </summary>
     public int InvalidNumber { get; }
 
+    /// <summary>
+    /// Initializes a new instance of the QuarterException class with a message and invalid number.
+    /// </summary>
+    /// <param name="message">Error message.</param>
+    /// <param name="invalidNumber">The number that caused the exception.</param>
     public QuarterException(string message, int invalidNumber) : base(message)
     {
         InvalidNumber = invalidNumber;
