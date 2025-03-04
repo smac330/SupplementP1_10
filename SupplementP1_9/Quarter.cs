@@ -8,6 +8,7 @@ using System.Linq;
 
 public class Quarter
 {
+    private static int counter = 0;
 
     /// <summary>
     /// initializes a new instance of the <see cref="Quarter"/> class.
@@ -34,6 +35,11 @@ public class Quarter
 
     public override bool Equals(object obj) => obj is Quarter q && this == q;
     public override int GetHashCode() => GetQuarter().GetHashCode();
+
+    public Quarter()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public class Program{
@@ -76,6 +82,8 @@ public class Program{
                 Console.WriteLine($"{group.Key}: {group.Count()}");
             }
         }
+
+
 
         }
     }
