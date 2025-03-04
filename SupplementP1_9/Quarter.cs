@@ -38,7 +38,13 @@ public class Quarter
 
     public Quarter()
     {
-        throw new NotImplementedException();
+        counter++;
+
+        if (counter > 4)
+        {
+            throw new QuarterException("Quarter limit exceeded", counter);
+        }
+        Value = counter;
     }
 }
 
